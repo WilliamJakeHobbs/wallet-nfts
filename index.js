@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const web3 = new Web3(window.ethereum)
 
   document.getElementById("load_button").addEventListener("click", async () => {
-    const contract = new web3.eth.Contract(SpacePunksTokenABI, "0x34997f9c19465ec01b7ed2ab0e61e2a388702790")
+    const contract = new web3.eth.Contract(SpacePunksTokenABI, "0x608c2feb6b80993b26ffb6fa84f454ad3ac38bf0")
     const walletAddress = document.getElementById("wallet_address").value
     contract.defaultAccount = walletAddress
     const spacePunksBalance = await contract.methods.balanceOf(walletAddress).call()
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const spacePunkTokenElement = document.getElementById("nft_template").content.cloneNode(true)
       spacePunkTokenElement.querySelector("h1").innerText = tokenMetadata["name"]
-      spacePunkTokenElement.querySelector("a").href = `https://opensea.io/assets/0x34997f9c19465ec01b7ed2ab0e61e2a388702790/${tokenId}`
+      spacePunkTokenElement.querySelector("a").href = `https://opensea.io/assets/0x608c2feb6b80993b26ffb6fa84f454ad3ac38bf0/${tokenId}`
       spacePunkTokenElement.querySelector("img").src = tokenMetadata["image"]
       spacePunkTokenElement.querySelector("img").alt = tokenMetadata["description"]
 
